@@ -1,0 +1,243 @@
+COMPLETION CHECKLIST - STEP BY STEP
+===================================
+
+Complete each task in order. Check off as you go.
+
+---
+
+PHASE 1: SETUP (Everyone)
+--------------------------
+
+[ ] All team members have read TEAM_INSTRUCTIONS.md
+[ ] All team members have read GRADING_RUBRIC.txt
+[ ] Everyone knows which functions they need to write
+[ ] Everyone has a copy of payroll.py
+[ ] Everyone understands that variable names must match between sections
+
+---
+
+PHASE 2: ALLEN POSTON - INPUT & VALIDATION
+-------------------------------------------
+
+Task 1: Complete get_employee_data() function
+[ ] Ask for first name
+[ ] Ask for last name
+[ ] Ask for employee ID
+[ ] Ask for number of dependents
+[ ] Ask for hours worked
+[ ] Check hours is not negative
+[ ] Check hours is not over MAX_HOURS_ALLOWED (80)
+[ ] Check dependents is not negative
+[ ] Check employee ID is not blank
+[ ] Show notice if hours are over 40
+[ ] Return dict with all data if valid
+[ ] Return "invalid" string if any check fails
+
+Task 2: Test your work
+[ ] Run python3 payroll.py
+[ ] Enter valid data - it should accept and move forward
+[ ] Enter invalid data (like -5 hours) - it should show error and ask again
+[ ] Verify all 5 security checks work
+
+Task 3: Document your work
+[ ] Add comments to your code explaining what it does
+[ ] Make sure SECURITY_EXPLANATION.txt is filled in (you write this)
+
+Status: COMPLETE / IN PROGRESS / NOT STARTED
+
+---
+
+PHASE 3: ALEXANDER MANSFIELD - PAYROLL CALCULATIONS
+----------------------------------------------------
+
+Task 1: Complete get_pay_rate() function
+[ ] Use the payrate_map provided
+[ ] If employee ID exists in map, return that rate
+[ ] If employee ID not found, return 20.0 as default
+[ ] Test with IDs E001, E002, E003 (should work)
+[ ] Test with fake ID like E999 (should return 20.0)
+
+Task 2: Complete calculate_payroll() function
+[ ] Calculate regular hours (hours up to 40)
+[ ] Calculate overtime hours (hours over 40)
+[ ] Calculate regular pay = regular_hours * pay_rate
+[ ] Calculate overtime pay = overtime_hours * pay_rate * 1.5
+[ ] Calculate gross pay = regular_pay + overtime_pay
+[ ] Calculate state tax = gross * 0.056
+[ ] Calculate federal tax = gross * 0.079
+[ ] Calculate net pay = gross - state_tax - federal_tax
+[ ] Round all money to 2 decimal places
+[ ] Return dict with all 6 values
+
+Task 3: Test your work
+[ ] Test with 40 hours at $20/hr: should get $800 gross, no overtime
+[ ] Test with 50 hours at $20/hr: should get $900 gross, $300 overtime
+[ ] Test with 45 hours at $22.50/hr: should get $1012.50 gross, $337.50 overtime
+[ ] Verify all calculations are correct
+
+Task 4: Document your work
+[ ] Add comments to your code explaining each calculation
+[ ] Make sure formulas are clear
+
+Status: COMPLETE / IN PROGRESS / NOT STARTED
+
+---
+
+PHASE 4: ARMANDO OCHOA - OUTPUT & FILE
+---------------------------------------
+
+Task 1: Complete save_and_display_results() function
+[ ] Take employee_data dict as input
+[ ] Take payroll_data dict as input
+[ ] Combine them into one record dict
+[ ] Add the record to the RESULTS list
+[ ] Print employee name and ID
+[ ] Print hours worked
+[ ] Print pay rate
+[ ] Print gross pay
+[ ] Print overtime pay
+[ ] Print state tax
+[ ] Print federal tax
+[ ] Print net pay
+[ ] Make it readable and clear
+
+Task 2: Complete write_results_to_file() function
+[ ] Check if RESULTS list has any data
+[ ] Open file named 'results.csv' for writing
+[ ] Write header row with column names
+[ ] For each record in RESULTS, write a row to the file
+[ ] Close the file
+[ ] Print message saying file was saved
+[ ] Handle any errors that occur
+
+Task 3: Test your work
+[ ] Run python3 payroll.py with at least 2 employees
+[ ] Check results print on screen correctly
+[ ] Check results.csv file exists
+[ ] Open results.csv and verify all data is there
+[ ] Make sure CSV is readable (can open in Excel)
+
+Task 4: Document your work
+[ ] Add comments to your code explaining what it does
+[ ] Save an example results.csv file with the submission
+
+Status: COMPLETE / IN PROGRESS / NOT STARTED
+
+---
+
+PHASE 5: ANIYA HOWELL - TESTING & QA
+------------------------------------
+
+Task 1: Document 10 test cases in TEST_RESULTS.txt
+[ ] Test 1: Normal employee, 30 hours
+[ ] Test 2: Normal employee, 40 hours
+[ ] Test 3: Overtime, 50 hours
+[ ] Test 4: Heavy overtime, 60 hours
+[ ] Test 5: Error - negative hours (should reject)
+[ ] Test 6: Error - hours too high (should reject)
+[ ] Test 7: Error - negative dependents (should reject)
+[ ] Test 8: Error - missing employee ID (should reject)
+[ ] Test 9: Error - non-numeric hours (should reject)
+[ ] Test 10: Error - non-numeric dependents (should reject)
+
+Task 2: Run all tests
+[ ] Run python3 payroll.py for each test case
+[ ] Enter the test data as specified
+[ ] Record what actually happened
+[ ] Mark as PASS or FAIL
+[ ] Note any problems or unexpected results
+
+Task 3: Complete TEST_RESULTS.txt
+[ ] Fill in "Actual Output" for each test case
+[ ] Mark each test as PASS or FAIL
+[ ] Fill in summary at bottom
+[ ] All 10 tests should PASS
+
+Task 4: Complete run_tests() function in payroll.py
+[ ] Add the 10 test cases as code in the run_tests() function
+[ ] Make it check that calculations are correct
+[ ] Make it check that errors are handled properly
+[ ] Make it report which tests pass and which fail
+
+Status: COMPLETE / IN PROGRESS / NOT STARTED
+
+---
+
+PHASE 6: FINAL INTEGRATION (Everyone)
+--------------------------------------
+
+Task 1: Verify everything works together
+[ ] Run python3 payroll.py
+[ ] Enter 10 employee records (can use test data)
+[ ] Verify each entry is validated
+[ ] Verify each calculation is correct
+[ ] Verify results display on screen
+[ ] Verify results.csv is created
+[ ] Program completes without errors
+
+Task 2: Check all files are in place
+[ ] payroll.py exists and runs
+[ ] results.csv created with test data
+[ ] TEST_RESULTS.txt has all 10 test cases documented
+[ ] SECURITY_EXPLANATION.txt explains all security checks
+[ ] PROJECT_PLAN.txt describes what each person did
+[ ] TEAM_INSTRUCTIONS.md describes the project
+[ ] GRADING_RUBRIC.txt shows scoring
+[ ] This checklist is complete
+
+Task 3: Final verification
+[ ] All code has comments
+[ ] All functions have descriptions
+[ ] Variable names are clear and consistent
+[ ] Program runs without errors
+[ ] All calculations are correct
+[ ] All security checks work
+[ ] All tests pass
+
+Status: COMPLETE / IN PROGRESS / NOT STARTED
+
+---
+
+PHASE 7: SUBMISSION (Everyone)
+-------------------------------
+
+Prepare submission folder with ALL of these files:
+
+[ ] payroll.py (main program)
+[ ] results.csv (example output)
+[ ] TEST_RESULTS.txt (test documentation)
+[ ] SECURITY_EXPLANATION.txt (security details)
+[ ] PROJECT_PLAN.txt (team plan)
+[ ] TEAM_INSTRUCTIONS.md (how to do project)
+[ ] GRADING_RUBRIC.txt (scoring)
+[ ] README explaining what to run
+
+How to submit:
+1. Make sure all files are in the folder
+2. Test that program runs with python3 payroll.py
+3. Submit all files as specified by instructor
+
+---
+
+NOTES FOR TEAM
+--------------
+
+Communication:
+- If you're stuck, ask your team immediately
+- Don't wait - problems grow bigger
+- Check your work before passing it to the next person
+
+Testing:
+- Test often, don't wait until the end
+- Run the full program frequently to catch problems early
+
+Variable names:
+- MUST match between sections
+- Check that next person uses same names you created
+- Example: If Allen creates 'HOURSWORKED', Alexander must use 'HOURSWORKED' too
+
+Questions to ask:
+- Is my function format correct?
+- Does my code use the right variable names?
+- Are my calculations mathematically correct?
+- Did I test error cases?

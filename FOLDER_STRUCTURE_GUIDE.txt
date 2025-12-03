@@ -1,0 +1,267 @@
+FOLDER STRUCTURE GUIDE
+======================
+
+Team PayMasters Payroll Project
+Organized into 5 folders for clarity
+
+---
+
+ROOT LEVEL (Main Entry Points)
+------------------------------
+
+README.md
+  ├─ Quick overview of project
+  ├─ Links to all important files
+  └─ Best place to start
+
+INDEX.md
+  ├─ Quick navigation guide
+  ├─ By-role instructions
+  ├─ Common questions answered
+  └─ Use this for quick reference
+
+STRUCTURE_EXPLAINED.md
+  ├─ Detailed explanation of each folder
+  ├─ What files do what
+  └─ When to use each file
+
+main.txt, Todo.md
+  ├─ Original assignment (reference)
+  └─ Keep for documentation
+
+
+---
+
+FOLDER 1: 01_SETUP
+------------------
+
+Purpose: Instructions and task tracking
+
+TEAM_INSTRUCTIONS.md
+  ├─ What each person needs to do
+  ├─ Step-by-step for each role
+  └─ START HERE after README
+
+COMPLETION_CHECKLIST.txt
+  ├─ 7 phases of project
+  ├─ Check off tasks as done
+  └─ Track your progress
+
+USAGE:
+  Monday: Read TEAM_INSTRUCTIONS.md
+  Daily: Check COMPLETION_CHECKLIST.txt
+  Done? Mark task as complete
+
+
+---
+
+FOLDER 2: 02_CODE
+-----------------
+
+Purpose: Main program code
+
+payroll.py
+  ├─ Main program file
+  ├─ Contains 4 main sections:
+  │   ├─ ALLEN's functions (get_employee_data)
+  │   ├─ ALEXANDER's functions (get_pay_rate, calculate_payroll)
+  │   ├─ ARMANDO's functions (save_and_display_results, write_results_to_file)
+  │   └─ ANIYA's functions (run_tests)
+  └─ Each person edits only their section
+
+USAGE:
+  Daily: Open and edit your function
+  Before committing: Add comments
+  Testing: Run python3 payroll.py
+
+
+---
+
+FOLDER 3: 03_DOCUMENTATION
+--------------------------
+
+Purpose: Plans, explanations, grading
+
+PROJECT_PLAN.txt
+  ├─ What each person is doing
+  ├─ Team member responsibilities
+  ├─ Security measures overview
+  └─ Files created list
+
+SECURITY_EXPLANATION.txt
+  ├─ All security checks explained
+  ├─ Why each check matters
+  ├─ Written by: Allen Poston
+  └─ How checks are tested
+
+GRADING_RUBRIC.txt
+  ├─ Full scoring breakdown
+  ├─ Point values for each section
+  ├─ 150 total points
+  │   ├─ 40 points: Individual work
+  │   ├─ 30 points: Testing
+  │   └─ 80 points: Final product
+  └─ Use this to know what's worth what
+
+USAGE:
+  Start: Read PROJECT_PLAN.txt
+  Need score info: Check GRADING_RUBRIC.txt
+  Understand security: Read SECURITY_EXPLANATION.txt
+
+
+---
+
+FOLDER 4: 04_TESTING
+--------------------
+
+Purpose: Test cases and results
+
+TEST_RESULTS.txt
+  ├─ Template for 10 test cases
+  ├─ Each test has:
+  │   ├─ Input data
+  │   ├─ Expected output
+  │   ├─ Actual output
+  │   └─ Pass/Fail result
+  ├─ Prepared by: Aniya Howell
+  └─ Shows proof program works
+
+USAGE:
+  Week 2: Fill in all 10 test cases
+  Testing: Run program and record results
+  Grading: Instructors check for proof
+
+
+---
+
+FOLDER 5: 05_SUBMISSION
+-----------------------
+
+Purpose: Files ready to turn in
+
+What goes here (copy before submitting):
+  ├─ payroll.py (from 02_CODE/)
+  ├─ results.csv (example output)
+  ├─ TEST_RESULTS.txt (from 04_TESTING/)
+  ├─ PROJECT_PLAN.txt (from 03_DOCUMENTATION/)
+  ├─ SECURITY_EXPLANATION.txt (from 03_DOCUMENTATION/)
+  ├─ GRADING_RUBRIC.txt (reference copy)
+  └─ README (submission instructions)
+
+USAGE:
+  End of project: Copy files here
+  Before due date: Verify all files present
+  Submission: Turn in contents of this folder
+
+
+---
+
+FILE RELATIONSHIP DIAGRAM
+
+README.md (START HERE)
+  │
+  ├──→ INDEX.md (Quick reference)
+  │
+  ├──→ STRUCTURE_EXPLAINED.md (Folder guide)
+  │
+  ├──→ 01_SETUP/
+  │     ├─ TEAM_INSTRUCTIONS.md (Your tasks)
+  │     └─ COMPLETION_CHECKLIST.txt (Progress)
+  │
+  ├──→ 02_CODE/
+  │     └─ payroll.py (Edit your section)
+  │
+  ├──→ 03_DOCUMENTATION/
+  │     ├─ PROJECT_PLAN.txt (Who does what)
+  │     ├─ SECURITY_EXPLANATION.txt (Why checks exist)
+  │     └─ GRADING_RUBRIC.txt (Scoring)
+  │
+  ├──→ 04_TESTING/
+  │     └─ TEST_RESULTS.txt (Document 10 tests)
+  │
+  └──→ 05_SUBMISSION/
+       └─ (Copy final files here)
+
+
+---
+
+QUICK FINDER
+
+To find: Type or search for:
+────────────────────────────
+
+Instructions         01_SETUP/TEAM_INSTRUCTIONS.md
+Progress tracking    01_SETUP/COMPLETION_CHECKLIST.txt
+My code              02_CODE/payroll.py
+Team plan            03_DOCUMENTATION/PROJECT_PLAN.txt
+Security info        03_DOCUMENTATION/SECURITY_EXPLANATION.txt
+Grading info         03_DOCUMENTATION/GRADING_RUBRIC.txt
+Test template        04_TESTING/TEST_RESULTS.txt
+Overview             README.md
+Index                INDEX.md
+Folder guide         STRUCTURE_EXPLAINED.md
+This file            FOLDER_STRUCTURE_GUIDE.txt
+
+
+---
+
+DAILY WORKFLOW
+
+Morning:
+  1. Open README.md
+  2. Check COMPLETION_CHECKLIST.txt for your phase
+  3. Open 02_CODE/payroll.py
+
+During work:
+  4. Edit your function
+  5. Add/fix comments
+  6. Test with sample data
+
+Before ending:
+  7. Run full program: python3 02_CODE/payroll.py
+  8. Check COMPLETION_CHECKLIST.txt
+  9. Mark what you completed
+
+End of project:
+  10. Copy files to 05_SUBMISSION/
+  11. Verify all files present
+  12. Submit
+
+
+---
+
+EVERYONE NEEDS TO READ
+
+1st day: README.md + STRUCTURE_EXPLAINED.md
+2nd day: 01_SETUP/TEAM_INSTRUCTIONS.md
+Weekly: 01_SETUP/COMPLETION_CHECKLIST.txt
+Before submitting: 03_DOCUMENTATION/GRADING_RUBRIC.txt
+
+
+---
+
+BY PERSON (WHERE TO GO)
+
+Allen:
+  → 01_SETUP/TEAM_INSTRUCTIONS.md (ALLEN section)
+  → 02_CODE/payroll.py (get_employee_data function)
+  → 03_DOCUMENTATION/SECURITY_EXPLANATION.txt (YOU write this)
+  → 04_TESTING/TEST_RESULTS.txt (reference)
+
+Alexander:
+  → 01_SETUP/TEAM_INSTRUCTIONS.md (ALEXANDER section)
+  → 02_CODE/payroll.py (get_pay_rate & calculate_payroll functions)
+  → 03_DOCUMENTATION/PROJECT_PLAN.txt (reference)
+  → 04_TESTING/TEST_RESULTS.txt (reference)
+
+Armando:
+  → 01_SETUP/TEAM_INSTRUCTIONS.md (ARMANDO section)
+  → 02_CODE/payroll.py (save_and_display_results & write_results_to_file functions)
+  → 03_DOCUMENTATION/PROJECT_PLAN.txt (reference)
+  → 04_TESTING/TEST_RESULTS.txt (reference)
+
+Aniya:
+  → 01_SETUP/TEAM_INSTRUCTIONS.md (ANIYA section)
+  → 02_CODE/payroll.py (run_tests function)
+  → 04_TESTING/TEST_RESULTS.txt (YOU fill this in)
+  → 03_DOCUMENTATION/SECURITY_EXPLANATION.txt (reference)

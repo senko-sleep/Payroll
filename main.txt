@@ -1,15 +1,22 @@
 PAYROLL_PROGRAM_ROADMAP.txt
-team paymasters – full code roadmap (person 1 draft)
-----------------------------------------------------
+Team PayMasters – Full Code Roadmap (Allen Poston draft)
+-------------------------------------------------------
 
-author:
-    person 1 – allen poston
-role:
-    planner + input & validation lead
-purpose:
+Author:
+    ALLEN POSTON
+Role:
+    Planner + Input & Validation Lead
+Purpose:
     provide the complete program structure,
-    implement all person 1 code,
-    leave todo sections for other members.
+    implement all ALLEN POSTON code,
+    leave TODO sections for other members (named below).
+
+
+Team Members:
+    ALLEN POSTON  – input & validation (module 1)
+    ALEXANDER MANSFIELD – payroll calculations (module 2)
+    ARMANDO OCHOA – output & file save (module 3)
+    ANIYA HOWELL  – testing & db prep (module 4)
 
 
 ====================================================
@@ -18,10 +25,10 @@ section 1 – overview of final program structure
 
 the final payroll program will be divided into 4 main modules:
 
-module 1 – input & validation  (person 1)
-module 2 – payroll calculations (person 2)
-module 3 – output + file save (person 3)
-module 4 – testing system + db prep (person 4)
+module 1 – input & validation  (assigned: ALLEN POSTON)
+module 2 – payroll calculations (assigned: ALEXANDER MANSFIELD)
+module 3 – output + file save (assigned: ARMANDO OCHOA)
+module 4 – testing system + db prep (assigned: ANIYA HOWELL)
 
 this roadmap defines:
     - function order
@@ -40,108 +47,108 @@ main program
 
 start program
 
-    load or define max_hours_allowed
+    load or define MAX_HOURS_ALLOWED
     display "payroll system initializing..."
 
     set employee_count = 0
 
     while employee_count < 10 do
 
-        // person 1 module call
+        // ALLEN POSTON module call
         employee_data = call get_employee_data()
 
         if employee_data == "invalid" then
             continue // invalid input retry
         endif
 
-        // person 2 - todo
+        // ALEXANDER MANSFIELD - TODO:
         // pay_rate = call get_pay_rate(employee_data.empid)
 
-        // person 2 - todo
+        // ALEXANDER MANSFIELD - TODO:
         // payroll_data = call calculate_payroll(
         //                     employee_data.hoursworked,
         //                     pay_rate
         //                 )
 
-        // person 3 - todo
+        // ARMANDO OCHOA - TODO:
         // call save_and_display_results(employee_data, payroll_data)
 
         employee_count = employee_count + 1
 
     end while
 
-    // person 3 - todo
+    // ARMANDO OCHOA - TODO:
     // call write_results_to_file()
 
-    // person 4 - todo
+    // ANIYA HOWELL - TODO:
     // call run_tests()
 
 end program
 
 
-
 ====================================================
-section 3 – person 1 full module (completed)
+section 3 – ALLEN POSTON module (completed)
 ====================================================
 
 ----------------------------------------------------
 module: get_employee_data()
-author: person 1 – allen poston
+author: ALLEN POSTON
+assigned: ALLEN POSTON
 ----------------------------------------------------
 
 module get_employee_data()
 
     display "---- employee data entry ----"
 
-    declare firstname, lastname, empid
-    declare dependents, hoursworked
+    declare FIRSTNAME, LASTNAME, EMPID
+    declare DEPENDENTS, HOURSWORKED
 
     display "enter first name:"
-    input firstname
+    input FIRSTNAME
 
     display "enter last name:"
-    input lastname
+    input LASTNAME
 
     display "enter employee id:"
-    input empid
+    input EMPID
 
     display "enter number of dependents:"
-    input dependents
+    input DEPENDENTS
 
     display "enter hours worked:"
-    input hoursworked
+    input HOURSWORKED
 
 
-    // security checks (lowercase comments)
+    // security checks (implemented by ALLEN POSTON)
 
-    if hoursworked < 0 then
+    if HOURSWORKED < 0 then
         display "error: negative hours not allowed."
         return "invalid"
     endif
 
-    if hoursworked > max_hours_allowed then
+    if HOURSWORKED > MAX_HOURS_ALLOWED then
         display "error: hours exceed maximum allowed."
         return "invalid"
     endif
 
-    if dependents < 0 then
+    if DEPENDENTS < 0 then
         display "error: dependents cannot be negative."
         return "invalid"
     endif
 
-    if empid == "" then
+    if EMPID == "" then
         display "error: employee id required."
         return "invalid"
     endif
 
-    if hoursworked > 40 then
+    if HOURSWORKED > 40 then
         display "notice: overtime hours detected."
     endif
 
-    return (firstname, lastname, empid, dependents, hoursworked)
+    // package validated data for next module
+    return (FIRSTNAME, LASTNAME, EMPID, DEPENDENTS, HOURSWORKED)
 
 endmodule
-
 
 
 ====================================================
@@ -149,56 +156,59 @@ section 4 – placeholders for other members (todo)
 ====================================================
 
 ----------------------------------------------------
-module: calculate_payroll()  
-assigned to: person 2 – todo
+module: calculate_payroll()
+assigned to: ALEXANDER MANSFIELD - TODO
 ----------------------------------------------------
-todo person 2:
-module calculate_payroll(hoursworked, payrate)
+todo ALEXANDER MANSFIELD:
+module calculate_payroll(HOURSWORKED, PAYRATE)
 
-    // compute gross pay
-    // compute overtime pay
-    // compute taxes
+    // compute gross pay (regular up to 40)
+    // compute overtime hours and overtime pay (1.5x)
+    // compute state tax (5.6%) and federal tax (7.9%)
     // compute net pay
-    // return payroll package
+    // return payroll package: gross, overtime, state_tax, federal_tax, net
 
 endmodule
 
 
 ----------------------------------------------------
-module: get_pay_rate()  
-assigned to: person 2 – todo
+module: get_pay_rate()
+assigned to: ALEXANDER MANSFIELD - TODO
 ----------------------------------------------------
-todo person 2:
-module get_pay_rate(empid)
+todo ALEXANDER MANSFIELD:
+module get_pay_rate(EMPID)
 
-    // lookup payrate from database or table
-    // return payrate
+    // lookup pay rate from database/table or placeholder map
+    // return PAYRATE
 
 endmodule
 
 
 ----------------------------------------------------
-module: save_and_display_results()  
-assigned to: person 3 – todo
+module: save_and_display_results()
+assigned to: ARMANDO OCHOA - TODO
 ----------------------------------------------------
-todo person 3:
-module save_and_display_results(employee_data, payroll_data)
+todo ARMANDO OCHOA:
+module save_and_display_results(EMPLOYEE_DATA, PAYROLL_DATA)
 
-    // store in lists
-    // display formatted results
-    // prep for file save
+    // store each record into results list/array/dict
+    // display formatted results to screen:
+    //    firstname, lastname, empid, hours, gross, overtime, state_tax, federal_tax, net
+    // prepare in-memory structure for file write
 
 endmodule
 
 
 ----------------------------------------------------
 module: write_results_to_file()
-assigned to: person 3 – todo
+assigned to: ARMANDO OCHOA - TODO
 ----------------------------------------------------
-todo person 3:
+todo ARMANDO OCHOA:
 module write_results_to_file()
 
-    // write stored data to txt or csv
+    // open output file (csv or txt)
+    // write header row
+    // write each stored record, formatted
     // close file
 
 endmodule
@@ -206,27 +216,49 @@ endmodule
 
 ----------------------------------------------------
 module: run_tests()
-assigned to: person 4 – todo
+assigned to: ANIYA HOWELL - TODO
 ----------------------------------------------------
-todo person 4:
+todo ANIYA HOWELL:
 module run_tests()
 
-    // define 10 test cases
-    // run through modules
-    // record outcomes
+    // define 10 test cases (varied hours, edge cases, invalid inputs)
+    // for each test case:
+    //    feed into get_employee_data() or simulate input
+    //    call get_pay_rate(), calculate_payroll(), save_and_display_results()
+    //    capture outputs and compare to expected values
+    // record pass/fail and notes
+    // produce test results document
 
 endmodule
 
 
+====================================================
+section 5 – integration notes (ALLEN POSTON)
+====================================================
+
+- variable names and casing must match exactly between modules (e.g., FIRSTNAME, HOURSWORKED).  
+- modules must return/accept the structures shown above.  
+- ALEXANDER must provide payroll package with named fields used by ARMANDO for output.  
+- ANIYA will verify ALLEN's security checks during testing.  
+- after all todos are implemented, this roadmap is the final program.
+
 
 ====================================================
-section 5 – integration notes (person 1)
+final submission checklist (filled)
 ====================================================
 
-- all variable names must match between modules  
-- outputs from one module must be usable by the next  
-- test cases will confirm whether each module works correctly  
-- after all todos are completed, this roadmap becomes the final full program
+requirement                               | responsible member
+----------------------------------------------------------------
+group project development plan            | ALLEN POSTON
+group name & member list                  | ALLEN POSTON
+input & validation module                 | ALLEN POSTON
+gross/overtime/tax/net module             | ALEXANDER MANSFIELD
+pay rate lookup / database prep           | ALEXANDER MANSFIELD / ANIYA HOWELL
+output & file writing                     | ARMANDO OCHOA
+testing scenarios & results               | ANIYA HOWELL
+security checks explanation               | ALLEN POSTON
+testing procedures                        | ANIYA HOWELL
+full pseudocode/flowchart                 | ALL (P1: ALLEN, P2: ALEXANDER, P3: ARMANDO)
 
 
 ====================================================
