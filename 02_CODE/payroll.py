@@ -24,7 +24,29 @@ def get_employee_data() -> Dict | str:
     # no negative hours, no hours > max_hours_allowed, no negative dependents, id can't be blank
     # return dict with keys 'firstname','lastname','empid','dependents','hoursworked' if valid
     # return 'invalid' if data is bad
-    pass
+    try:
+        firstname = input("enter first name: ").strip()
+        lastname = input("enter last name: ").strip()
+        empid = input("enter employee id: ").strip()
+        dependents = int(input("enter number of dependents: "))
+        hoursworked = float(input("enter hours worked: "))
+
+        if empid == "":
+            return "invalid"
+        if dependents < 0:
+            return "invalid"
+        if hoursworked < 0 or hoursworked > max_hours_allowed:
+            return "invalid"
+
+        return {
+            "firstname": firstname,
+            "lastname": lastname,
+            "empid": empid,
+            "dependents": dependents,
+            "hoursworked": hoursworked
+        }
+    except:
+        return "invalid"
 
 # module 2: payroll calculations
 # alexander mansfield
