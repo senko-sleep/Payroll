@@ -73,19 +73,29 @@ def calculate_payroll(hours_worked: float, pay_rate: float) -> Dict:
 # module 3: output & file
 # armando ochoa
 # display results and save to file
+def save_and_display_results(employee_data, payroll_data):
+    record = {}
+    record.update(employee_data)
+    record.update(payroll_data)
+    results.append(record)
 
-def save_and_display_results(employee_data: Dict, payroll_data: Dict) -> None:
-    """save results and print them."""
-    # TODO: merge employee_data and payroll_data
-    # add to results list
-    # print in readable format
-    pass
+    print(record)
 
-def write_results_to_file(filename: str = 'results.csv') -> None:
-    """write all results to a csv file."""
-    # TODO: check if results list has data
-    # open file, write header + all records, close file
-    pass
+
+def write_results_to_file(filename='results.csv'):
+    if len(results) == 0:
+        return
+
+    file = open(filename, 'w', newline='')
+    writer = csv.writer(file)
+
+    writer.writerow(results[0].keys())
+    for r in results:
+        writer.writerow(r.values())
+
+    file.close()
+
+
 
 # module 4: testing & qa
 # aniya howell
