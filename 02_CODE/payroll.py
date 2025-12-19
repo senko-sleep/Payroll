@@ -22,62 +22,46 @@ def get_employee_data():
     """get employee info and validate inputs strictly.
 
     - firstname / lastname: non-empty, letters only
-    - empid: non-empty string
-    - dependents: int >= 0
     - hoursworked: float 0..max_hours_allowed
     - payrate: float > 0
-    - department: optional, defaults to 'General'
 
     returns dict or 'invalid'
     """
     try:
-        firstname = input("enter first name (e.g., john, mary-anne): ").strip()
-        lastname = input("enter last name (e.g., smith, o'neill): ").strip()
+        firstname = input("Enter first name (letters only, e.g., John, Mary): ").strip()
+        lastname = input("Enter last name (letters only, e.g., Smith, ONeill): ").strip()
 
         if not firstname or any(not part.isalpha() for part in firstname.split()):
-            print("invalid first name.")
+            print("Invalid first name.")
             return "invalid"
 
         if not lastname or any(not part.isalpha() for part in lastname.split()):
-            print("invalid last name.")
+            print("Invalid last name.")
             return "invalid"
 
-        empid = input("enter employee id (e.g., E1234, 5678): ").strip()
-        if not empid:
-            print("employee id cannot be blank.")
-            return "invalid"
-
-        dependents = int(input("enter number of dependents (e.g., 0, 2, 5): ").strip())
-        if dependents < 0:
-            print("dependents must be 0 or greater.")
-            return "invalid"
-
-        hoursworked = float(input(f"enter hours worked (0-{max_hours_allowed}, e.g., 40, 35.5): ").strip())
+        hoursworked = float(input(
+            f"Enter hours worked (0-{max_hours_allowed}). Example: 40, 35.5: "
+        ).strip())
         if hoursworked < 0 or hoursworked > max_hours_allowed:
-            print(f"hours must be between 0 and {max_hours_allowed}.")
+            print(f"Hours must be between 0 and {max_hours_allowed}.")
             return "invalid"
 
-        payrate = float(input("enter hourly pay rate (e.g., 15.00, 22.50): ").strip())
+        payrate = float(input(
+            "Enter hourly pay rate in USD. Example: 15.00, 22.50: "
+        ).strip())
         if payrate <= 0:
-            print("pay rate must be greater than 0.")
+            print("Pay rate must be greater than 0.")
             return "invalid"
-
-        department = input("enter department (e.g., HR, IT, Sales): ").strip()
-        if not department:
-            department = "General"
 
         return {
             "firstname": firstname,
             "lastname": lastname,
-            "empid": empid,
-            "dependents": dependents,
             "hoursworked": hoursworked,
             "payrate": payrate,
-            "department": department,
         }
 
     except:
-        print("invalid input; try again.")
+        print("Invalid input; try again.")
         return "invalid"
 
 
@@ -140,9 +124,10 @@ def save_and_display_results(employee_data, payroll_data):
     record.update(payroll_data)
     results.append(record)
     print(record)
+    write_results_to_file()  # save to CSV immediately after each entry
 
 
-def write_results_to_file(filename="results.csv"):
+def write_results_to_file(filename="02_CODE/results.csv"):
     """write accumulated results to csv file.
 
     - filename: string, output CSV filename
@@ -212,13 +197,13 @@ def run_tests():
 # main program
 def main():
     """main loop to collect 10 employee records and process payroll."""
-    print("payroll system initializing...\n")
+    print("Payroll system initializing...\n")
     employee_count = 0
 
     while employee_count < 10:
         employee_data = get_employee_data()
         if employee_data == "invalid":
-            print("please re-enter the employee record.\n")
+            print("Please re-enter the employee record.\n")
             continue
 
         payroll_data = calculate_payroll(
@@ -229,7 +214,7 @@ def main():
         save_and_display_results(employee_data, payroll_data)
         employee_count += 1
 
-    print("\nprocessing complete.")
+    print("\nProcessing complete.")
 
 
 if __name__ == "__main__":
@@ -237,4 +222,3 @@ if __name__ == "__main__":
     run_tests()
     # then run interactive payroll
     main()
-    write_results_to_file()
