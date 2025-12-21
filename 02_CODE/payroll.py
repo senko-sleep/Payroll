@@ -134,6 +134,9 @@ def write_results_to_file(filename="02_CODE/results.csv"):
     """
     if not results:
         return
+    
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+
 
     fieldnames = list(results[0].keys())
     with open(filename, "w", newline="") as file:
