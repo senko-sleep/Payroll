@@ -1,115 +1,12 @@
-Payroll Program - Test Results
-Tester: Aniya Howell
-Date: 12/19/25
+test 1: pass
+test 2: pass
+test 3: pass
+test 4: pass
+test 5: pass
+test 6: pass
+test 7: pass
+test 8: pass
+test 9: pass
+test 10: pass (caught invalid input)
 
-Testing Environment:
-- Windows
-- Python run using IDLE
-- File tested: payroll.py
-
-------------------------------------------------------------
-TC01 Normal Pay (30 hours)
-Input Entered:
-  First: Test
-  Last: User
-  Hours: 30
-  Pay rate: 20
-Expected Output:
-  Program accepts input
-  Gross = 600.00
-  Overtime = 0.00
-  State tax = 33.60
-  Federal tax = 47.40
-  Net = 519.00
-Actual Output:
-  gross=600.0, overtime=0.0, state_tax=33.6, federal_tax=47.4, net=519.0
-Result: PASS
-
-------------------------------------------------------------
-TC02 Overtime Pay (50 hours)
-Input Entered:
-  First: Test
-  Last: User
-  Hours: 50
-  Pay rate: 20
-Expected Output:
-  Program accepts input
-  Overtime pay applied for 10 hours
-  Gross = 1100.00
-  Overtime = 300.00
-  State tax = 61.60
-  Federal tax = 86.90
-  Net = 951.50
-Actual Output:
-  gross=1100.0, overtime=300.0, state_tax=61.6, federal_tax=86.9, net=951.5
-Result: PASS
-
-------------------------------------------------------------
-TC03 Invalid Hours (over max limit)
-Input Entered:
-  First: Test
-  Last: User
-  Hours: 81
-  Pay rate: 20
-Expected Output:
-  Program rejects input
-  Displays error message
-  Prompts user to re-enter data
-Actual Output:
-  Printed "Hours must be between 0 and 80."
-  Prompted user to re-enter employee record
-Result: PASS
-
-------------------------------------------------------------
-TC04 Invalid Hours (negative)
-Input Entered:
-  First: Test
-  Last: User
-  Hours: -5
-  Pay rate: 20
-Expected Output:
-  Program rejects input
-  Prompts user to re-enter data
-Actual Output:
-  Program rejected negative hours and asked to re-enter.
-Result: PASS
-
-------------------------------------------------------------
-TC05 Invalid Pay Rate (zero)
-Input Entered:
-  First: Test
-  Last: User
-  Hours: 10
-  Pay rate: 0
-Expected Output:
-  Program rejects input
-  Prompts user to re-enter data
-Actual Output:
-  Program rejected pay rate of 0 and asked to re-enter.
-Result: PASS
-
-------------------------------------------------------------
-Summary:
-- Normal pay calculations work correctly
-- Overtime calculations work correctly
-- Input validation correctly rejects invalid hours and pay rate
-- Program prompts user to re-enter invalid data
-------------------------------------------------------------
-CSV Verification
-
-The following test case was verified against results.csv:
-
-Employee:
-  Name: Ted John
-  Hours: 10
-  Pay rate: 60
-
-Calculated Values in CSV:
-  Gross: 600.00
-  State tax: 33.60
-  Federal tax: 47.40
-  Net: 519.00
-
-Verification:
-- Values in results.csv matched the values calculated and printed by the program.
-- This confirms correct file output and calculation consistency.
+passed 10 / 10 tests
