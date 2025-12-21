@@ -1,24 +1,3 @@
-# START HERE - Project Overview
-
-## Quick Links
-
-### Setup & Instructions
-- [Team Instructions](01_SETUP/TEAM_INSTRUCTIONS.md) - **READ THIS FIRST**
-- [Completion Checklist](01_SETUP/COMPLETION_CHECKLIST.txt) - Step by step task list
-
-### Code
-- [payroll.py](02_CODE/payroll.py) - Main program file (everyone edits their section)
-
-### Documentation
-- [Project Plan](03_DOCUMENTATION/PROJECT_PLAN.txt) - What each person is doing
-- [Security Explanation](03_DOCUMENTATION/SECURITY_EXPLANATION.txt) - How we prevent bad data
-- [Grading Rubric](03_DOCUMENTATION/GRADING_RUBRIC.txt) - Scoring breakdown
-
-### Testing
-- [Test Results](04_TESTING/TEST_RESULTS.txt) - Document your 10 test cases here
-
----
-
 ## What This Project Is
 
 You are building a payroll program for 10 employees. The program:
@@ -54,16 +33,6 @@ You are building a payroll program for 10 employees. The program:
 
 ---
 
-## How to Get Started
-
-1. **Everyone** reads [Team Instructions](01_SETUP/TEAM_INSTRUCTIONS.md)
-2. **Everyone** reads [Grading Rubric](03_DOCUMENTATION/GRADING_RUBRIC.txt)
-3. **Everyone** opens [payroll.py](02_CODE/payroll.py)
-4. Each person edits ONLY their assigned functions (marked with their name)
-5. Use [Completion Checklist](01_SETUP/COMPLETION_CHECKLIST.txt) to track progress
-
----
-
 ## Running the Program
 
 ```bash
@@ -80,10 +49,6 @@ Then enter employee data for up to 10 employees. Results print to screen and sav
 |------|---------|-------|
 | payroll.py | Main program | Everyone (edit your section only) |
 | results.csv | Output file | Created by program |
-| TEST_RESULTS.txt | Test documentation | Aniya |
-| PROJECT_PLAN.txt | Team plan | All (read) |
-| SECURITY_EXPLANATION.txt | How we validate data | Allen |
-| GRADING_RUBRIC.txt | Scoring | Instructors |
 
 ---
 
@@ -101,7 +66,4 @@ Then enter employee data for up to 10 employees. Results print to screen and sav
 When you're done, make sure you have:
 - payroll.py (runs without errors)
 - results.csv (example output)
-- TEST_RESULTS.txt (all 10 tests documented)
-- PROJECT_PLAN.txt (filled in)
-- SECURITY_EXPLANATION.txt (filled in)
 - All code has comments explaining what it does
